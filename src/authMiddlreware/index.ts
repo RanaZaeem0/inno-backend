@@ -5,7 +5,9 @@ import dotenv from 'dotenv';
 import { string } from "zod";
 import { log } from "console";
 
-dotenv.config();
+dotenv.config({
+  path:'../env'
+});
 
 const JWT_SECRET: string = process.env.JWT_SECRET || 'default_secret';
 async function  authMiddleware(req:Request,res:Response,next:any) {
