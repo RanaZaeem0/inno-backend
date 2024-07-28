@@ -14,7 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const jwt = require('jsonwebtoken');
 const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
+dotenv_1.default.config({
+    path: '../env'
+});
 const JWT_SECRET = process.env.JWT_SECRET || 'default_secret';
 function authMiddleware(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
