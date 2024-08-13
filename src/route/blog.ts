@@ -104,15 +104,15 @@ const blogUpdateZodSchema = zod.object({
 
 })
 
+blogRoute.get('/blog/all/a',(req,res)=>{
+    res.json({
+        msg:"asd da"
+    })
+})
+
 blogRoute.get('/blog/all', async (req: Request, res: Response) => {
 
-    const zodBlogValidate = blogZodSchema.safeParse(req.body)
-    console.log({
-        title: req.body.title,
-        content: req.body.content,
-    });
-    const authorId = req.userId
-    console.log(authorId);
+ 
 
     try {
         const response = await prisma.post.findMany({

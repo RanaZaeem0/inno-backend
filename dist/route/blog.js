@@ -92,14 +92,12 @@ blogRoute.put('/blog', index_1.default, (req, res) => __awaiter(void 0, void 0, 
         console.log(`${error}`);
     }
 }));
-blogRoute.get('/blog/all', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const zodBlogValidate = blogZodSchema.safeParse(req.body);
-    console.log({
-        title: req.body.title,
-        content: req.body.content,
+blogRoute.get('/blog/all/a', (req, res) => {
+    res.json({
+        msg: "asd da"
     });
-    const authorId = req.userId;
-    console.log(authorId);
+});
+blogRoute.get('/blog/all', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield prisma.post.findMany({
             include: {

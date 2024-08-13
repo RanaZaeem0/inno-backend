@@ -138,6 +138,41 @@ userRoute.get("/data", async (req: Request, res: Response) => {
     });
   }
 });
+userRoute.get('/profile', async (req: Request, res: Response) => {
+  const readBlogZod = zod.string()
+  const validate = readBlogZod.safeParse(req.query.userId)
+  const userId  = validate.data as string  
+  console.log(userId);
+  
+  try {
+      const response = await prisma.user.findUnique(
+          {
+              where: {
+                id: userId
+              },
+              select:{
+                username:true,
+                email:true,
+                id:true
+              }
+             
+          }
+      )
+
+      if (response) {
+          res.status(200).json({
+              response
+          })
+          return response
+      }
+  } catch (error) {
+      console.log(`${error}`);
+
+  } finally {
+      prisma.$disconnect()
+  }
+
+})
 
 const zodUpdateSchema = zod.object({
   username: zod.string().optional(),
