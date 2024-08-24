@@ -11,7 +11,7 @@ app.use('/api',mainRoute)
 
 app.get('/',(req:Request,res:Response)=>{
    res.json({
-     username:"zain",
+     username:"zaeem",
      email:"zain@gmail.com"
    })
 })
