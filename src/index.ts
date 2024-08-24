@@ -15,9 +15,10 @@ app.get('/',(req:Request,res:Response)=>{
      email:"zain@gmail.com"
    })
 })
+      
 
-
-
+ 
+ 
 
 
 app.listen(port,()=>{
