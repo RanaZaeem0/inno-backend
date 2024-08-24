@@ -15,7 +15,7 @@ app.get('/',(req:Request,res:Response)=>{
      email:"zain@gmail.com"
    })
 })
-
+  
 
 app.listen(port,()=>{
   console.log(`servesr is rungung on port ${port}`);
