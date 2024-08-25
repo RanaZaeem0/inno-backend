@@ -4,6 +4,7 @@ import blogRoute from "./blog";
 
 const mainRoute  = express.Router()
 
+
 mainRoute.use('/user',userRoute)
 mainRoute.use('/post',blogRoute)
 
