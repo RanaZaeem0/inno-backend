@@ -5,7 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const route_1 = __importDefault(require("./route"));
+const client_1 = require("@prisma/client");
 const cors = require('cors');
+const clinet = new client_1.PrismaClient();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 app.use(express_1.default.json());
@@ -16,6 +18,16 @@ app.get('/', (req, res) => {
         username: "zain",
         email: "zain@gmail.com"
     });
+});
+clinet.$connect()
+    .then(() => {
+    console.log('Connected to PostgreSQL database');
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    });
+})
+    .catch((error) => {
+    console.error('Failed to connect to the database:', error);
 });
 app.listen(port, () => {
     console.log(`servesr is rungung on port ${port}`);
