@@ -7,7 +7,6 @@ const cors  = require('cors')
 const clinet = new PrismaClient()
 
 
-
 const app = express()
 const port  =process.env.PORT || 3000
 app.use(express.json())
@@ -16,7 +15,7 @@ app.use('/api',mainRoute)
 
 app.get('/',(req:Request,res:Response)=>{
    res.json({
-     username:"zain",
+     username:"uzi",
      email:"zain@gmail.com"
    })
 })

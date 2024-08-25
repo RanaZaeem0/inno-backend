@@ -3,7 +3,7 @@ name: Build and Deploy to Docker Hub
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-push:
@@ -22,7 +22,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./docker/Dockerfile.user  # Adjust if Dockerfile is in a different location
+        file: ../../Dockerfile  # Adjust if Dockerfile is in a different location
         push: true
         tags: ranazaeem1/innobackend:latest  # Replace with your Docker Hub username and repository
 
