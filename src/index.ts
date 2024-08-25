@@ -19,6 +19,8 @@ app.get('/',(req:Request,res:Response)=>{
    })
 })
 
+
+
 clinet.$connect()
   .then(() => {
     console.log('Connected to PostgreSQL database');
