@@ -1,7 +1,7 @@
 import express,{Request,Response} from "express"
 import mainRoute from "./route"
 const cors  = require('cors')
-
+   
 
 const app = express()
 const port  =process.env.PORT || 3000
@@ -15,7 +15,7 @@ app.get('/',(req:Request,res:Response)=>{
      email:"zain@gmail.com"
    })
 })
-
+  
 
 app.listen(port,()=>{
   console.log(`servesr is rungung on port ${port}`);
