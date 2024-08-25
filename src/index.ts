@@ -1,7 +1,7 @@
 import express,{Request,Response} from "express"
 import mainRoute from "./route"
 const cors  = require('cors')
-
+   
 
 const app = express()
 const port  =process.env.PORT || 3000
