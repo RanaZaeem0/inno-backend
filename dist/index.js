@@ -9,7 +9,7 @@ const client_1 = require("@prisma/client");
 const cors = require('cors');
 const clinet = new client_1.PrismaClient();
 const app = (0, express_1.default)();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3005;
 app.use(express_1.default.json());
 app.use(cors());
 app.use('/api', route_1.default);
