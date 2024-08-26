@@ -15,7 +15,7 @@ app.use(cors());
 app.use('/api', route_1.default);
 app.get('/', (req, res) => {
     res.json({
-        username: "zain",
+        username: "uzi",
         email: "zain@gmail.com"
     });
 });

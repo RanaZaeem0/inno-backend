@@ -14,7 +14,7 @@ dotenv.config();
 
 const JWT_SECRET: string = process.env.JWT_SECRET || "default_secret";
 
-userRoute.get("/", (req, res) => {
+userRoute.get("/", (req:Request, res:Response) => {
   res.json({
     msg: "ho there",
   });
